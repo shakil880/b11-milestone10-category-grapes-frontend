@@ -18,6 +18,7 @@ import Products from "./pages/Products.jsx";
 import ProductDetails from "./pages/ProductDetails.jsx";
 import About from "./pages/About.jsx";
 import Login from "./pages/Login.jsx";
+import Register from "./pages/Register.jsx";
 
 
 // step 2: create a router object
@@ -45,6 +46,10 @@ const router = createBrowserRouter([
       {
         path: "login",
         Component: Login,
+      },
+      {
+        path: "register",
+        Component: Register,
       },
     ],
   },
