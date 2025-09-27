@@ -1,16 +1,28 @@
-# React + Vite
+# TaskMarket - Freelance Task Marketplace
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, full-stack web application that connects freelancers with clients for project collaboration. Built with React, Express.js, and MongoDB.
 
-Currently, two official plugins are available:
+## 🌐 Live Site URL
+**Live Website**: [https://b11-milestone10-category-grapes-front.netlify.app/]
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Key Features
 
-## React Compiler
+• **Secure Authentication System**: Firebase-powered user authentication with Google login integration and profile management
+• **Complete Task Management**: Full CRUD operations for posting, editing, deleting, and browsing tasks with detailed task information
+• **Professional Bidding System**: Users can place bids on tasks with competitive pricing and deadline management
+• **Responsive Design Excellence**: Mobile-first responsive design with consistent 80vw-95vw container system across all devices
+• **Advanced Task Categories**: Organized task categorization with professional badges and filtering capabilities
+• **Real-time Data Synchronization**: Dynamic content updates with MongoDB Atlas integration and optimized API endpoints
+• **Private Route Protection**: Secure access control ensuring user-specific content and authentication-based navigation
 
-The React Compiler is not enabled on this template. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠️ Technologies Used
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Frontend
+- React 19.1.1
+- React Router DOM 7.9.2
+- Firebase Authentication
+- React Hook Form
+- React Hot Toast
+- SweetAlert2
+- Swiper.js
+- CSS3
