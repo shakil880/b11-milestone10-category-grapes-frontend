@@ -1,0 +1,254 @@
+.register-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 1rem;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .register-page {
+    padding: 2rem 1rem;
+  }
+}
+
+.register-container {
+  width: 100%;
+  max-width: 400px;
+}
+
+@media (min-width: 768px) {
+  .register-container {
+    max-width: 450px;
+  }
+}
+
+.register-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .register-card {
+    padding: 2rem;
+  }
+}
+
+.register-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.register-header h2 {
+  font-size: 1.8rem;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+.register-header p {
+  color: #7f8c8d;
+  font-size: 0.9rem;
+}
+
+.register-form {
+  margin-bottom: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #2c3e50;
+  font-weight: 500;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid #ecf0f1;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+  box-sizing: border-box;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #3498db;
+}
+
+.password-hint {
+  display: block;
+  margin-top: 0.5rem;
+  color: #7f8c8d;
+  font-size: 0.8rem;
+}
+
+.register-btn {
+  width: 100%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 0.75rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.register-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+}
+
+.register-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.divider {
+  text-align: center;
+  margin: 1.5rem 0;
+  position: relative;
+}
+
+.divider::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: #ecf0f1;
+}
+
+.divider span {
+  background: white;
+  padding: 0 1rem;
+  color: #7f8c8d;
+  font-size: 0.9rem;
+}
+
+.google-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  background: white;
+  border: 2px solid #dadce0;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 1.5rem;
+  min-height: 48px;
+  color: #3c4043;
+}
+
+.google-btn:hover:not(:disabled) {
+  border-color: #d2e3fc;
+  background-color: #f8f9fa;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transform: translateY(-1px);
+}
+
+.google-btn:active:not(:disabled) {
+  background-color: #f1f3f4;
+  transform: translateY(0);
+}
+
+.google-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  border-color: #f1f3f4;
+  color: #9aa0a6;
+}
+
+.google-btn:disabled .google-icon-svg path {
+  opacity: 0.6;
+}
+
+.google-icon-svg {
+  flex-shrink: 0;
+}
+
+.google-btn span {
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 500;
+}
+
+.register-footer {
+  text-align: center;
+}
+
+.register-footer a {
+  color: #3498db;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.register-footer a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+  .register-page {
+    padding: 0.5rem;
+  }
+  
+  .register-card {
+    padding: 1.25rem;
+  }
+  
+  .register-header h2 {
+    font-size: 1.5rem;
+  }
+  
+  .form-group input {
+    padding: 0.65rem;
+    font-size: 0.95rem;
+  }
+  
+  .register-btn, .google-btn {
+    padding: 0.65rem;
+    font-size: 0.95rem;
+  }
+  
+  .form-group {
+    margin-bottom: 1.25rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .register-container {
+    max-width: 100%;
+  }
+  
+  .register-card {
+    padding: 1rem;
+    border-radius: 8px;
+  }
+  
+  .google-btn {
+    gap: 0.5rem;
+  }
+  
+  .google-btn span {
+    font-size: 0.9rem;
+  }
+  
+  .register-header h2 {
+    font-size: 1.3rem;
+  }
+}
