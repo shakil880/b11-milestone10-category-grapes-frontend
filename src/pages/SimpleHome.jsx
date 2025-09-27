@@ -1,22 +1,11 @@
 const SimpleHome = () => {
   return (
     <div style={{ padding: '2rem', textAlign: 'center' }}>
-      <h1>🚀 TaskMarket - Freelance Marketplace</h1>
-      <p>Welcome to our freelance task marketplace!</p>
-      
-      <div style={{ marginTop: '2rem' }}>
-        <h2>✨ Features</h2>
-        <ul style={{ maxWidth: '600px', margin: '0 auto', textAlign: 'left' }}>
-          <li>🔐 User Authentication</li>
-          <li>📋 Browse and Post Tasks</li>
-          <li>💼 Freelancer Marketplace</li>
-          <li>📱 Responsive Design</li>
-          <li>🎯 Task Management</li>
-        </ul>
-      </div>
+      <h1>TaskMarket - Freelance Marketplace</h1>
+
 
       <div style={{ marginTop: '2rem' }}>
-        <h2>🔥 Popular Categories</h2>
+        <h2>-- Popular Categories --</h2>
         <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap', marginTop: '1rem' }}>
           <span style={{ background: '#3498db', color: 'white', padding: '0.5rem 1rem', borderRadius: '20px' }}>
             Web Development

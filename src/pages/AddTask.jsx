@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useAuth } from '../providers/AuthProvider';
 import toast from 'react-hot-toast';
 import './AddTask.css';
+import { API_ENDPOINTS, apiRequest } from '../config/api';
 
 const AddTask = () => {
   const { user } = useAuth();
@@ -45,27 +46,17 @@ const AddTask = () => {
     };
 
     try {
-      const response = await fetch('http://localhost:5000/tasks', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(taskData),
+      await apiRequest.post(API_ENDPOINTS.TASKS, taskData);
+      toast.success('Task posted successfully!');
+      setFormData({
+        title: '',
+        category: '',
+        description: '',
+        deadline: '',
+        budget: ''
       });
-
-      if (response.ok) {
-        toast.success('Task posted successfully!');
-        setFormData({
-          title: '',
-          category: '',
-          description: '',
-          deadline: '',
-          budget: ''
-        });
-      } else {
-        throw new Error('Failed to post task');
-      }
     } catch (error) {
+      console.error('Error posting task:', error);
       toast.error('Error posting task. Please try again.');
     } finally {
       setLoading(false);

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useAuth } from '../providers/AuthProvider';
+import { API_ENDPOINTS, apiRequest } from '../config/api';
 import toast from 'react-hot-toast';
 import './UpdateTask.css';
 
@@ -31,7 +32,7 @@ const UpdateTask = () => {
   ];
 
   useEffect(() => {
-    fetch(`http://localhost:5000/tasks/${id}`)
+    fetch(`${API_ENDPOINTS.TASKS}/${id}`)
       .then(res => res.json())
       .then(data => {
         if (data.userEmail !== user?.email) {
@@ -73,7 +74,7 @@ const UpdateTask = () => {
     };
 
     try {
-      const response = await fetch(`http://localhost:5000/tasks/${id}`, {
+      const response = await fetch(`${API_ENDPOINTS.TASKS}/${id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

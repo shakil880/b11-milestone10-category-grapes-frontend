@@ -11,7 +11,8 @@
   flex: 1;
   padding: 0;
   width: 100%;
-  min-height: calc(100vh - 140px); /* Account for navbar and footer */
+  min-height: calc(100vh - 140px);
+  min-width: 90vw;
 }
 
 .loading-container {

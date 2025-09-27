@@ -4,6 +4,7 @@ import { useAuth } from '../providers/AuthProvider';
 import toast from 'react-hot-toast';
 import Swal from 'sweetalert2';
 import './MyPostedTasks.css';
+import { API_ENDPOINTS, apiRequest } from '../config/api';
 
 const MyPostedTasks = () => {
   const { user } = useAuth();
@@ -12,8 +13,7 @@ const MyPostedTasks = () => {
 
   useEffect(() => {
     if (user?.email) {
-      fetch(`http://localhost:5000/my-tasks/${user.email}`)
-        .then(res => res.json())
+      apiRequest.get(API_ENDPOINTS.MY_TASKS(user.email))
         .then(data => {
           setTasks(data);
           setLoading(false);
@@ -40,7 +40,7 @@ const MyPostedTasks = () => {
 
     if (result.isConfirmed) {
       try {
-        const response = await fetch(`http://localhost:5000/tasks/${taskId}`, {
+        const response = await fetch(`${API_ENDPOINTS.TASKS}/${taskId}`, {
           method: 'DELETE',
         });
 
@@ -58,7 +58,7 @@ const MyPostedTasks = () => {
 
   const viewBids = async (taskId, taskTitle) => {
     try {
-      const response = await fetch(`http://localhost:5000/bids/${taskId}`);
+      const response = await fetch(`${API_ENDPOINTS.BIDS}/${taskId}`);
       const bids = await response.json();
       
       if (bids.length === 0) {
@@ -102,8 +102,9 @@ const MyPostedTasks = () => {
     <div className="my-posted-tasks-page">
       <div className="container">
         <div className="page-header">
-          <h1>My Posted Tasks</h1>
-          <p>Manage all your posted tasks</p>
+          <div className="page-header-content">
+            <h1>My Posted Tasks</h1>
+          </div>
           <Link to="/add-task" className="add-task-btn">Post New Task</Link>
         </div>
 
@@ -152,21 +153,21 @@ const MyPostedTasks = () => {
                           className="action-btn update-btn"
                           title="Update Task"
                         >
-                          ✏️
+                          Edit
                         </Link>
                         <button 
                           onClick={() => handleDelete(task._id, task.title)}
                           className="action-btn delete-btn"
                           title="Delete Task"
                         >
-                          🗑️
+                          Delete
                         </button>
                         <button 
                           onClick={() => viewBids(task._id, task.title)}
                           className="action-btn bids-btn"
                           title="View Bids"
                         >
-                          👁️
+                          View Bids
                         </button>
                       </div>
                     </td>

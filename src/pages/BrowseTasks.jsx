@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router';
 import './BrowseTasks.css';
+import { API_ENDPOINTS, apiRequest } from '../config/api';
 
 const BrowseTasks = () => {
   const [tasks, setTasks] = useState([]);
@@ -8,8 +9,7 @@ const BrowseTasks = () => {
   const [filter, setFilter] = useState('all');
 
   useEffect(() => {
-    fetch('http://localhost:5000/tasks')
-      .then(res => res.json())
+    apiRequest.get(API_ENDPOINTS.TASKS)
       .then(data => {
         setTasks(data);
         setLoading(false);

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useAuth } from '../providers/AuthProvider';
+import { API_ENDPOINTS, apiRequest } from '../config/api';
 import toast from 'react-hot-toast';
 import './TaskDetails.css';
 
@@ -14,7 +15,7 @@ const TaskDetails = () => {
   const [submittingBid, setSubmittingBid] = useState(false);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/tasks/${id}`)
+    fetch(`${API_ENDPOINTS.TASKS}/${id}`)
       .then(res => res.json())
       .then(data => {
         setTask(data);
@@ -40,7 +41,7 @@ const TaskDetails = () => {
     };
 
     try {
-      const response = await fetch('http://localhost:5000/bids', {
+      const response = await fetch(API_ENDPOINTS.BIDS, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

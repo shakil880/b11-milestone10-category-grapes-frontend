@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import './Home.css';
+import { API_ENDPOINTS, apiRequest } from '../config/api';
 
 import SimpleHome from './SimpleHome';
 
@@ -10,8 +12,7 @@ const Home = () => {
 
   useEffect(() => {
     // Try to fetch from backend, but provide fallback data
-    fetch('http://localhost:5000/tasks/featured')
-      .then(res => res.json())
+    apiRequest.get(API_ENDPOINTS.FEATURED_TASKS)
       .then(data => {
         setFeaturedTasks(data);
         setLoading(false);
@@ -94,7 +95,7 @@ const Home = () => {
                 <div className="banner-content">
                   <h1 className="banner-title">{slide.title}</h1>
                   <p className="banner-subtitle">{slide.subtitle}</p>
-                  <button className="cta-button">Get Started</button>
+                  <Link to="/login" className="cta-button">Get Started</Link>
                 </div>
               </div>
             </div>
