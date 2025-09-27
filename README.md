@@ -8,12 +8,22 @@ A modern, full-stack web application that connects freelancers with clients for 
 ## ✨ Key Features
 
 • **Secure Authentication System**: Firebase-powered user authentication with Google login integration and profile management
+
+
 • **Complete Task Management**: Full CRUD operations for posting, editing, deleting, and browsing tasks with detailed task information
+
+
 • **Professional Bidding System**: Users can place bids on tasks with competitive pricing and deadline management
-• **Responsive Design Excellence**: Mobile-first responsive design with consistent 80vw-95vw container system across all devices
+
+
 • **Advanced Task Categories**: Organized task categorization with professional badges and filtering capabilities
+
+
 • **Real-time Data Synchronization**: Dynamic content updates with MongoDB Atlas integration and optimized API endpoints
+
+
 • **Private Route Protection**: Secure access control ensuring user-specific content and authentication-based navigation
+
 
 ## 🛠️ Technologies Used
 
